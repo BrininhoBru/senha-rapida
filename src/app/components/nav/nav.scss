@@ -1,0 +1,31 @@
+.toolbar {
+    background-color: var(--mat-sys-primary-container);
+
+    &__icon {
+        color: var(--mat-sys-on-primary-container);
+        font-size: var(--mat-sys-headline-large-size);
+        height: auto;
+        width: auto;
+    }
+
+    &__title {
+        color: var(--mat-sys-on-primary-container);
+        font-size: var(--mat-sys-headline-large-size);
+        margin-right: .75em;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    &__nav {
+        display: inline-block;
+        position: relative;
+        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}

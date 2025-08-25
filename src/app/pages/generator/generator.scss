@@ -1,0 +1,39 @@
+.generator {
+    &__content {
+        padding: 1em;
+    }
+
+    &__password {
+        &__icon-button {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--mat-sys-primary);
+            }
+        }
+    }
+
+    &__field-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+
+        &__slider--maxWidth {
+            flex-grow: 1;
+        }
+
+        &__label--larger {
+            font-size: var(--mat-sys-display-medium);
+        }
+
+        &__checkboxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            @media (max-width: 400px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

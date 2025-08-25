@@ -1,0 +1,34 @@
+<app-centralized-container>
+
+    <mat-form-field appearance="outline">
+        <input matInput [value]="password()" readonly>
+        <mat-icon class="generator__password__icon-button" matSuffix (click)="copyToClipboard()">content_copy</mat-icon>
+        <mat-icon class="generator__password__icon-button" matSuffix (click)="generate()">autorenew</mat-icon>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+
+    <H2>Opções para sua senha:</H2>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+        <div class="generator__content">
+            <form [formGroup]="form">
+                <div class="generator__field-container">
+                    <p class="generator__field-container__label--larger">Tamanho da senha:</p>
+                    <mat-slider class="generator__field-container__slider--maxWidth" min="1" max="64" showTickMarks
+                        discrete>
+                        <input matSliderThumb formControlName="passwordLength" />
+                    </mat-slider>
+                </div>
+
+                <div class="generator__field-container__checkboxes">
+                    <mat-checkbox formControlName="uppercase">Incluir letras maiúsculas (A-Z)</mat-checkbox>
+                    <mat-checkbox formControlName="numbers">Incluir números (0-9)</mat-checkbox>
+                    <mat-checkbox formControlName="lowercase">Incluir letras minúsculas (a-z)</mat-checkbox>
+                    <mat-checkbox formControlName="symbols">Incluir símbolos (!@#$%)</mat-checkbox>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</app-centralized-container>

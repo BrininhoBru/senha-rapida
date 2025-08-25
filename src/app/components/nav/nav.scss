@@ -1,5 +1,6 @@
 .toolbar {
     background-color: var(--mat-sys-primary-container);
+    flex-shrink: 0;
 
     &__icon {
         color: var(--mat-sys-on-primary-container);
@@ -22,7 +23,7 @@
     &__nav {
         display: inline-block;
         position: relative;
-        
+
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;

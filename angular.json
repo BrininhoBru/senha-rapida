@@ -28,9 +28,7 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "outputPath": "dist/senha-rapida",
-            "baseHref": "/senha-rapida/"
+            ]
           },
           "configurations": {
             "production": {

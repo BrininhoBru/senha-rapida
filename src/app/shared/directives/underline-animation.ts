@@ -11,7 +11,7 @@ import { filter } from 'rxjs';
   }
 })
 export class UnderlineAnimationDirective {
-  @Input('appUnderlineHover') routeLink!: string;
+  @Input('appUnderlineAnimation') routeLink!: string;
 
   constructor(private el: ElementRef, private router: Router) {
     const routerEventsSignal = toSignal(
@@ -19,6 +19,8 @@ export class UnderlineAnimationDirective {
     );
 
     effect(() => {
+      routerEventsSignal();
+      
       const currentUrl = this.router.url;
       if (currentUrl === this.routeLink) {
         this.el.nativeElement.classList.add('active-underline');

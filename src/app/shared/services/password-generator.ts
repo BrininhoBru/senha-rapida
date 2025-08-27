@@ -20,8 +20,10 @@ export class PasswordGenerator {
 
     const passwordChars: string[] = [];
 
-    for (const set of charSets) {
-      passwordChars.push(set[this.secureRandomInt(set.length)]);
+    if (options.passwordLength > charSets.length) {
+      for (const set of charSets) {
+        passwordChars.push(set[this.secureRandomInt(set.length)]);
+      }
     }
 
     const allChars = charSets.join('');

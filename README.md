@@ -1,59 +1,84 @@
-# SenhaRapida
+# Senha Rápida
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+**Senha Rápida** é um projeto pessoal, open source, com finalidade educativa e prática: ajudar pessoas a criarem senhas fortes e seguras.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Funcionalidades (MVP)
 
-```bash
-ng serve
-```
+- Gerador de senhas configurável por:
+  - Tamanho da senha (número de caracteres)
+  - Incluir letras maiúsculas (A–Z)
+  - Incluir letras minúsculas (a–z)
+  - Incluir números (0–9)
+  - Incluir símbolos (!@#$%)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> Observação: o MVP foca apenas na geração com essas opções.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠 Próximos passos / Roadmap
 
-```bash
-ng generate component component-name
-```
+- Gerador de **pass-phrases** (frases-senha mais fáceis de memorizar)
+- Medidor de força/entropia da senha
+- Aba **Sobre** com dicas, artigos e boas práticas de cibersegurança e senhas seguras
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🧰 Tecnologias
 
-## Building
+- Angular 20
+- Angular Material
 
-To build the project run:
+---
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 💻 Instalação & Execução
 
 ```bash
-ng test
+# clonar repositório
+git clone https://github.com/BrininhoBru/senha-rapida.git
+cd senha-rapida
+
+# instalar dependências
+npm install
+
+# rodar em modo de desenvolvimento
+ng serve 
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📝 Como usar
 
-```bash
-ng e2e
-```
+### Testar localmente
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+1. Abra a aplicação no navegador (por padrão `http://localhost:4200`).
+2. Defina o **tamanho** desejado da senha.
+3. Marque as opções que quer incluir (maiúsculas, minúsculas, números, símbolos).
+4. A senha será **gerada automaticamente** a cada opção selecionada.
+5. Use o botão de **Copiar** para copiar a senha para a área de transferência.
 
-## Additional Resources
+### Versão publicada (GitHub Pages)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Há uma versão publicada no **GitHub Pages** do projeto. Acesse o [link público do projeto](https://brininhobru.github.io/senha-rapida/generator) para usar a aplicação sem precisar rodar localmente.
+- A interface pública oferece as mesmas opções.
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Abra uma *issue* para sugerir funcionalidades ou reporte bugs e envie *pull requests* com descrições claras das alterações.
+
+---
+
+## 📄 Licença
+
+Projeto licenciado sob **MIT License**.
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+---
+
+## Contato
+
+Se quiser conversar sobre o projeto ou solicitar alguma feature, abra uma issue no repositório ou entre em contato via perfil do GitHub.

@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'over'"
+      [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      @for (route of routes; track $index) {
+        <a mat-list-item [routerLink]="route.route">{{route.label}}</a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar>
+      @if (isHandset$ | async) {
+        <button type="button" aria-label="Toggle sidenav" matIconButton (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+
+      <mat-icon class="toolbar__icon mat-icon-large">encrypted</mat-icon>
+      <h1 class="toolbar__title">Senha Rápida</h1>
+
+      @if (!(isHandset$ |async)) {
+        <div class="toolbar__nav-list">
+          @for (route of routes; track $index) {
+            <a [routerLink]="route.route">{{route.label}}</a>
+          }
+        </div>
+      }
+    </mat-toolbar>
+
+    <div class="sidenav-content">
+      <ng-content></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

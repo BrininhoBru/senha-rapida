@@ -1,5 +1,4 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { CentralizedContainer } from '../../components/centralized-container/centralized-container';
 import { MatCardModule } from "@angular/material/card";
 import { MatDivider } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/slider';
@@ -9,10 +8,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { PasswordGenerator } from '../../shared/services/password-generator';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable, map, shareReplay } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-generator',
-  imports: [CentralizedContainer, MatCardModule, MatDivider, MatSliderModule, FormsModule, ReactiveFormsModule, MatInputModule, MatIconModule, MatCheckboxModule],
+  imports: [CommonModule, MatCardModule, MatDivider, MatSliderModule, FormsModule, ReactiveFormsModule, MatInputModule, MatIconModule, MatCheckboxModule],
   templateUrl: './generator.html',
   styleUrl: './generator.scss'
 })
@@ -20,6 +22,13 @@ export class GeneratorComponent implements OnInit {
   private fb = inject(FormBuilder);
   private snackBar = inject(MatSnackBar);
   private passwordGenerator = inject(PasswordGenerator);
+  private breakpointObserver = inject(BreakpointObserver);
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   form!: FormGroup;
   password = signal('');

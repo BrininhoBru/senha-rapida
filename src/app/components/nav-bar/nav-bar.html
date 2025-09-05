@@ -29,6 +29,19 @@
           }
         </div>
       }
+
+      <div class="toolbar__actions">
+        <a
+          mat-icon-button
+          [href]="githubData.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [matTooltip]="githubData.label"
+          [attr.aria-label]="githubData.label"
+        >
+          <img [src]="githubData.icon" [alt]="githubData.iconAlt" width="24" height="24" style="display: block;" />
+        </a>
+      </div>
     </mat-toolbar>
 
     <div class="sidenav-content">

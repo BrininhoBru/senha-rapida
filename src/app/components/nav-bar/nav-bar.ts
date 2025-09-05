@@ -1,14 +1,16 @@
-import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -21,11 +23,20 @@ import { RouterLink } from '@angular/router';
     MatListModule,
     MatIconModule,
     AsyncPipe,
-    RouterLink
+    RouterLink,
+    MatTooltipModule
   ]
 })
 export class NavBarComponent {
   private breakpointObserver = inject(BreakpointObserver);
+
+
+  protected githubData = {
+    url: 'https://github.com/BrininhoBru/senha-rapida',
+    icon: '/png/github-icon.png',
+    iconAlt: 'github icon',
+    label: 'Ver no GitHub'
+  }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
